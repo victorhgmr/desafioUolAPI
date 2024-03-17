@@ -1,4 +1,6 @@
 package victormr.desafiouol.model;
 
-public class GroupType {
+public enum GroupType {
+    JUSTICE_LEAGUE,
+    AVANGERS
 }
