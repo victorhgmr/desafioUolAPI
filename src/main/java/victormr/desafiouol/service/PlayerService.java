@@ -6,6 +6,8 @@ import victormr.desafiouol.model.Player;
 import victormr.desafiouol.model.dtos.PlayerDTO;
 import victormr.desafiouol.repositories.PlayerRepository;
 
+import java.util.List;
+
 @Service
 public class PlayerService {
     @Autowired
@@ -19,6 +21,10 @@ public class PlayerService {
         Player newplayer = new Player(dto);
         this.savePlayer(newplayer);
         return newplayer;
+    }
+
+    public List<Player> getAllPlayers(){
+        return this.repository.findAll();
     }
 
 }
