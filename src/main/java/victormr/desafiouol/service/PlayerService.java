@@ -24,10 +24,9 @@ public class PlayerService {
 
     public Player createPlayer(PlayerDTO dto){
         Player newplayer = new Player(dto);
-        this.savePlayer(newplayer);
         String codiname = getCodiname(dto.groupType());
         newplayer.setCodiname(codiname);
-        return newplayer;
+        return repository.save(newplayer);
     }
 
     public List<Player> getAllPlayers(){

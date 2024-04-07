@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ import java.util.List;
 
 @Service
 @Getter
+@Setter
 public class CodinameService {
     // Salvar em memória a lista de codinames do link xml
     // Toda vez que a aplicação for inicializada, vai bater nos links e salvar
@@ -29,8 +31,9 @@ public class CodinameService {
 
     @Autowired
     private Environment env;
-
+    @Getter
     private List<String> avangersCodinameList = new ArrayList<>();
+    @Getter
     private List<String> justiceLeagueList = new ArrayList<>();
 
 
@@ -77,6 +80,7 @@ public class CodinameService {
             e.printStackTrace();
         }
     }
+
 
 
 }
